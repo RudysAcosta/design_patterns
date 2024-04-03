@@ -1,6 +1,6 @@
 package factory
 
-type Pokemon interface {
+type IPokemon interface {
 	Attack() string
 }
 
@@ -30,7 +30,7 @@ func (s *Bulbasaur) Attack() string {
 
 type PokemonFactory struct{}
 
-func (pf *PokemonFactory) CreatePokemon(pokemonType string) Pokemon {
+func (pf *PokemonFactory) CreatePokemon(pokemonType string) IPokemon {
 	switch pokemonType {
 	case "Charmander":
 		return &Charmander{}
